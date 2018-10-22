@@ -8,6 +8,10 @@
         <servlet-name>CookieLanguageServlet</servlet-name>
         <servlet-class>controleur.CookieLanguageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TraitementServlet</servlet-name>
+        <servlet-class>controleur.TraitementServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LanguageServlet</servlet-name>
         <url-pattern>/LanguageServlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>CookieLanguageServlet</servlet-name>
         <url-pattern>/CookieLanguageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementServlet</servlet-name>
+        <url-pattern>/TraitementServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

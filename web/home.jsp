@@ -20,33 +20,33 @@
             <div class="row">
                 <div class="col-3">
                 </div>
-                <div class="col-5">
+                <div class="col-6">
                     <fieldset class="border p-2">
-                        <form name="f_Authentification" action="Authentification" method="POST">
+                        <form name="f_activities" action="TraitementServlet" method="POST">
                             <table >
                                 <legend>
-                                    <h2 id="legengAuthentfication"><fmt:message key="messageAuthentification" /></h2>
+                                    <h2 id="legendBienvenue"><fmt:message key="messageBienvenue" /></h2>
                                 </legend>
                                 <tr>
-                                    <td><label id="lPoids" for="poids"><fmt:message key="poidClient" />:</label></td>
-                                    <td><input type="text" name="poids" /></td>
+                                    <td><label id="lNom" for="poids"><fmt:message key="nomClient" />:</label></td>
+                                    <td><input type="text" name="nom" /></td>
                                 </tr>
                                 <tr>
-                                    <td><label id="lPoids" for="poids"><fmt:message key="poidClient" />:</label></td>
-                                    <td><input type="text" name="poids" /></td>
+                                    <td><label id="lprenom" for="poids"><fmt:message key="prenomClient" />:</label></td>
+                                    <td><input type="text" name="prenom" /></td>
                                 </tr>
                                 <tr>
-                                    <td><label id="lPoids" for="poids"><fmt:message key="poidClient" />:</label></td>
-                                    <td><input type="text" name="poids" /></td>
+                                    <td><label id="lddn" for="poids"><fmt:message key="ddnClient" />:</label></td>
+                                    <td><input type="date" name="ddn" /></td>
                                 </tr>
                                 <tr colspan="2">
-                                    <td><input id="b_valider" class="btn btn-info"  type="submit" name="b_valider" value="<fmt:message key="boutonValider" />"></td>
+                                    <td><input id="bEnvoyer" class="btn btn-info"  type="submit" name="bEnvoyer" value="<fmt:message key="boutonEnvoyer" />"></td>
                                 </tr>
                             </table>
                         </form>
                     </fieldset>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
 
                 </div>
             </div>
