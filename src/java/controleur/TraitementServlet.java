@@ -6,15 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.WebServiceRef;
 import model.Client;
 import model.DateClient;
 import model.Gestionnaire;
 
 public class TraitementServlet extends HttpServlet {
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/service1/Service1.wsdl")
-    private Service1_Service service;
     
     String clientJson;
 
@@ -35,18 +31,13 @@ public class TraitementServlet extends HttpServlet {
         String jsonDateClient = Gestionnaire.dateClientJSON(ddnClient);
         
         String message = "{\"nom\":\"Amine\",\"prenom\":\"Ghodbane\",\"ddn\":{\"annee\":\"1999\",\"mois\":\"05\",\"jour\":\"05\"}}";
-        System.out.println("###########################################################################################################################################");
-        showMessage(clientJson);
-        
-        
-        request.setAttribute("client", showMessage(clientJson));
+        System.out.println("#####################################################################################################");
+             
+        request.setAttribute("client", clientJson);
         
         RequestDispatcher disp = request.getRequestDispatcher("/test.jsp");
         
         disp.forward(request, response);
-        
-        
-        
         
     }
 
@@ -89,12 +80,7 @@ public class TraitementServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private String showMessage(java.lang.String clientInfos) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        controleur.Service1 port = service.getService1Port();
-        return port.showMessage(clientInfos);
-    }
+
 
 
 }
