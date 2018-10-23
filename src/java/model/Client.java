@@ -4,9 +4,9 @@ package model;
 public class Client {
     String nom;
     String prenom;
-    DateClient ddn;
+    int ddn;
 
-    public Client(String nom, String prenom, DateClient ddn) {
+    public Client(String nom, String prenom, int ddn) {
         this.nom = nom;
         this.prenom = prenom;
         this.ddn = ddn;
@@ -21,7 +21,7 @@ public class Client {
         return prenom;
     }
 
-    public DateClient getDdn() {
+    public int getDdn() {
         return ddn;
     }
 
@@ -33,7 +33,7 @@ public class Client {
         this.prenom = prenom;
     }
 
-    public void setDdn(DateClient ddn) {
+    public void setDdn(int ddn) {
         this.ddn = ddn;
     }  
 }

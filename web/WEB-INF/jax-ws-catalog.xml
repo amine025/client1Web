@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/service1/Service1?WSDL" uri="wsdl/localhost_8080/service1/Service1.wsdl"/>
     <system systemId="http://localhost:8080/service1/Service1?xsd=1" uri="wsdl/localhost_8080/service1/Service1.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/service1/MessageService?WSDL" uri="wsdl/localhost_8080/service1/MessageService.wsdl"/>
+    <system systemId="http://localhost:8080/service1/MessageService?xsd=1" uri="wsdl/localhost_8080/service1/MessageService.xsd_1.xsd"/>
 </catalog>

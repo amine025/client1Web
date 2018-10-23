@@ -26,21 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-Service1" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Service1"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Service1" destdir="${build.generated.dir}/jax-wsCache/Service1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Service1/wsdl/localhost_8080/service1/Service1.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/service1/Service1?WSDL" xnocompile="true" xendorsed="true" package="controleur">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Service1/wsdl/localhost_8080/service1/Service1.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Service1"/>
+    <target name="wsimport-client-MessageService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/MessageService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/MessageService" destdir="${build.generated.dir}/jax-wsCache/MessageService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/MessageService/wsdl/localhost_8080/service1/MessageService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/service1/MessageService?WSDL" xnocompile="true" xendorsed="true" package="service">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/MessageService/wsdl/localhost_8080/service1/MessageService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/MessageService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Service1">
+            <fileset dir="${build.generated.dir}/jax-wsCache/MessageService">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-Service1" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/controleur"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/Service1"/>
+    <target name="wsimport-client-clean-MessageService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/MessageService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Service1"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-MessageService"/>
 </project>
