@@ -26,7 +26,7 @@ public class TraitementServlet extends HttpServlet {
         //myMessage(clientJson);
 
         clientJson = Gestionnaire.clientJSON(nom, prenom,ddn);
-        request.setAttribute("client", /*clientJson*/myMessage(clientJson));
+        request.setAttribute("client", /*clientJson*/ myMessage(clientJson));
 
         RequestDispatcher disp = request.getRequestDispatcher("/test.jsp");
         disp.forward(request, response);
