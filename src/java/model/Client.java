@@ -2,38 +2,37 @@
 package model;
 
 public class Client {
-    String nom;
-    String prenom;
-    int ddn;
+    String firstName;
+    String lastName;
+    int birthDay;
 
-    public Client(String nom, String prenom, int ddn) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.ddn = ddn;
-        
+    public Client(String firstName, String lastName, int birthDay) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDay = birthDay;
     }
 
-    public String getNom() {
-        return nom;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getLastName() {
+        return lastName;
     }
 
-    public int getDdn() {
-        return ddn;
+    public int getBirthDay() {
+        return birthDay;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setDdn(int ddn) {
-        this.ddn = ddn;
+    public void setBirthDay(int birthDay) {
+        this.birthDay = birthDay;
     }  
 }
