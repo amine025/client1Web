@@ -1,36 +1,21 @@
 package controleur;
 
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.WebServiceRef;
 import model.Gestionnaire;
-import service.MessageService_Service;
 
 public class TraitementServlet extends HttpServlet {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/service1/MessageService.wsdl")
-    private MessageService_Service service;
-
-    String clientJson;
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nom = request.getParameter("nom");
-        String prenom = request.getParameter("prenom");
-        int ddn = Integer.parseInt(request.getParameter("ddn"));
-        
-        //myMessage(clientJson);
 
-        clientJson = Gestionnaire.clientJSON(nom, prenom,ddn);
-        request.setAttribute("client", /*clientJson*/ myMessage(clientJson));
-
-        RequestDispatcher disp = request.getRequestDispatcher("/test.jsp");
-        disp.forward(request, response);
-
+        String birthDay = request.getParameter("birthDay");
+        String message = Gestionnaire.myMessage(birthDay);
+        System.out.println("hello");
+        response.getWriter().print(message);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -71,12 +56,4 @@ public class TraitementServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private String myMessage(java.lang.String jsonInfos) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        service.MessageService port = service.getMessageServicePort();
-        return port.myMessage(jsonInfos);
-    }
-
 }

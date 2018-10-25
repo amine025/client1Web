@@ -5,8 +5,6 @@
  */
 package model;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 /**
  *
@@ -14,22 +12,10 @@ import com.google.gson.GsonBuilder;
  */
 public class Gestionnaire {
 
-    private static Client client;
-
-    public Gestionnaire() {
-
+    public static String myMessage(java.lang.String birthDay) {
+        service.MessageService_Service service = new service.MessageService_Service();
+        service.MessageService port = service.getMessageServicePort();
+        return port.myMessage(birthDay);
     }
 
-    private static void createClient(String nom, String prenom, int dateClient) {
-        client = new Client(nom, prenom, dateClient);
-    }
-
-    public static String clientJSON(String nom, String prenom, int dateClient) {
-        createClient(nom, prenom, dateClient);
-        String clientJson = null;
-        Gson gson = new Gson();
-
-        clientJson = gson.toJson(client);
-        return clientJson;
-    }
 }
