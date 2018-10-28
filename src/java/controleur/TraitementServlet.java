@@ -14,7 +14,6 @@ public class TraitementServlet extends HttpServlet {
 
         String birthDay = request.getParameter("birthDay");
         String message = Gestionnaire.myMessage(birthDay);
-        System.out.println("hello");
         response.getWriter().print(message);
     }
 

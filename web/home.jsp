@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!--        <link href="style/style.css" rel="stylesheet" type="text/css"/>-->
+        <!--        <link href="style/style.css" rel="stylesheet" type="text/css"/>-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <title>JSP Page</title>
     </head>
@@ -55,7 +55,7 @@
 
             function processData() {
                 if (this.readyState === 4 && this.status === 200) {
-                    hMessage.innerHTML = '<br><br>' + this.responseText;
+                    hMessage.innerHTML = '<br>' + this.responseText;
                 }
             }
         </script>
