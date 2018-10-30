@@ -58,6 +58,7 @@
                     hMessage.innerHTML = '<br>' + this.responseText;
                 }
             }
+            
         </script>
     </body>
 </html>
